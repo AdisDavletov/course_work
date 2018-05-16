@@ -1,19 +1,35 @@
-\documentclass[oneside,14pt]{extreport}
+\documentclass[oneside,14pt,russianb]{extreport}
 \usepackage[utf8]{inputenc}
 \usepackage[russianb]{babel}
 \usepackage{vmargin}
 \usepackage{graphicx}
 \setpapersize{A4}
-\setmarginsrb{2cm}{1.5cm}{1cm}{1.5cm}{0pt}{0mm}{0pt}{13mm}
+\setmarginsrb{3cm}{2cm}{2cm}{2cm}{0pt}{0mm}{0pt}{13mm}
 \usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{placeins}
+\usepackage{xcolor}
+\definecolor{linkcolor}{HTML}{005555} % цвет ссылок
+\definecolor{urlcolor}{HTML}{0106E9} % цвет гиперссылок
+\hypersetup{pdfstartview=FitH,citecolor=linkcolor,linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
 \sloppy
+%\linespread{1.25}
+
+%\makeatletter
+%\renewcommand*{\@biblabel}[1]{\hfill#1.}
+%\makeatother
 
 \begin{document}
 \input{title}
-%\input{}
+\input{annotation}
 \tableofcontents
-\chapter*{Введение}
-\addcontentsline{toc}{chapter}{Intro}
-
-\chapter{Заключение}
+\input{intro}
+\addcontentsline{toc}{chapter}{Введение}
+\input{overview}
+\input{main}
+\input{conclusion}
+\input{bibliography}
+\addcontentsline{toc}{chapter}{Список литературы}
+\input{appendix}
 \end{document}
